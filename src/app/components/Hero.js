@@ -52,11 +52,11 @@ export default function Hero() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className='text-sm md:text-md mb-8 text-[#444444] mt-12'
+              className='text-sm md:text-md mb-8 text-[#444444] mt-4 font-medium'
             >
-              <span className='text-[#000000] bg-[#facd00]'>Hour Block</span> is a simple app for
-              managing your personal project. It&apos;s free, it&apos;s fully offline, it&apos;s
-              simple!
+              <span className='text-[#444444] bg-[#facd00]'>Hour Block</span> is not just a simple
+              app for managing your to-do list. It&apos;s a training app to get things done.
+              It&apos;s free, it&apos;s simple!
             </motion.p>
             <div>
               <motion.button
