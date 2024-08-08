@@ -59,17 +59,18 @@ export default function Hero() {
               It&apos;s free, it&apos;s simple!
             </motion.p>
             <div>
-              <motion.button
+              <motion.a
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                href='https://github.com/Niravpatel129/timebank/releases/download/v1.0.27/Timebank-1.0.27-arm64.dmg'
                 className='mt-8 px-6 py-3 bg-[#facd00] text-[#222222] rounded-full text-sm md:text-lg flex items-center space-x-2 font-sans font-semibold'
               >
                 <span>Download</span>
                 <FaApple color='black' size={24} />
-              </motion.button>
+              </motion.a>
               <motion.button
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}

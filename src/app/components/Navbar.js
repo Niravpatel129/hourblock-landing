@@ -65,10 +65,13 @@ export default function Navbar() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <button className='flex items-center px-4 py-2 bg-black text-white rounded-full gap-2'>
+        <a
+          href='https://github.com/Niravpatel129/timebank/releases/download/v1.0.27/Timebank-1.0.27-arm64.dmg'
+          className='flex items-center px-4 py-2 bg-black text-white rounded-full gap-2'
+        >
           <span className='hidden md:block'>Download</span>
           <FaApple size={24} />
-        </button>
+        </a>
       </motion.div>
       {toastMessage && (
         <div className='fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-2 rounded'>
