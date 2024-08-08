@@ -15,7 +15,7 @@ export default function Hero() {
   };
 
   return (
-    <section className='flex flex-col items-center justify-center text-center h-full pb-16'>
+    <section className='flex flex-col items-center justify-center text-center h-full pb-10'>
       <div className='flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-4 w-full items-center justify-evenly'>
         <motion.div
           className='hidden md:block'
