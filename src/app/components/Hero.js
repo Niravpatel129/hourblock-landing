@@ -15,14 +15,15 @@ export default function Hero() {
   };
 
   return (
-    <section className='flex flex-col items-center justify-center text-center h-full pb-20'>
-      <div className='flex space-x-4 mb-4 w-full items-center justify-evenly'>
+    <section className='flex flex-col items-center justify-center text-center h-full pb-16'>
+      <div className='flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-4 w-full items-center justify-evenly'>
         <motion.div
+          className='hidden md:block'
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Image src='/Webinar-amico.png' alt='Sun' width={500} height={500} />
+          <Image src='/Webinar-amico.png' alt='Sun' width={400} height={400} />
         </motion.div>
         <div className='flex items-center justify-center flex-col'>
           <motion.button
@@ -31,10 +32,10 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className='py-2 bg-[#f1f5fb] text-black rounded-full flex items-center space-x-2 pl-2 pr-1'
+            className='py-2 bg-[#f1f5fb] text-black rounded-full flex items-center pl-4 pr-2 text-sm gap-1'
           >
             <span>Show your support on</span> <strong>Product Hunt</strong>
-            <div className='flex items-center justify-center bg-[#ffffff] rounded-full  p-2'>
+            <div className='flex items-center justify-center bg-[#ffffff] rounded-full  p-2 ml-2'>
               <FaChevronRight size={19} />
             </div>
           </motion.button>
@@ -43,7 +44,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className='text-6xl font-bold mb-4'
+              className='text-4xl md:text-6xl font-bold mb-4'
             >
               Manage your project. Anywhere. Anytime.
             </motion.h1>
@@ -51,7 +52,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className='text-md mb-8 text-[#444444] mt-12'
+              className='text-sm md:text-md mb-8 text-[#444444] mt-12'
             >
               <span className='text-[#000000] bg-[#facd00]'>Hour Block</span> is a simple app for
               managing your personal project. It&apos;s free, it&apos;s fully offline, it&apos;s
@@ -64,7 +65,7 @@ export default function Hero() {
                 transition={{ duration: 0.5 }}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className='mt-8 px-6 py-3 bg-[#facd00] text-[#222222] rounded-full text-lg flex items-center space-x-2 font-sans font-semibold'
+                className='mt-8 px-6 py-3 bg-[#facd00] text-[#222222] rounded-full text-sm md:text-lg flex items-center space-x-2 font-sans font-semibold'
               >
                 <span>Download</span>
                 <FaApple color='black' size={24} />
@@ -76,7 +77,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={openModal}
-                className=' text-sm hover:underline'
+                className='text-xs md:text-sm hover:underline'
               >
                 <span>Preview</span>
               </motion.button>
@@ -84,6 +85,7 @@ export default function Hero() {
           </div>
         </div>
         <motion.div
+          className='hidden md:block'
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -91,8 +93,8 @@ export default function Hero() {
           <Image
             src='https://cdn.prod.website-files.com/6307868789eb60b1fb712ff1/63271e24c2acfcbba2082e7a_Financial%20Stress.png'
             alt='Sun'
-            width={500}
-            height={500}
+            width={400}
+            height={400}
           />
         </motion.div>
       </div>
@@ -140,8 +142,8 @@ export default function Hero() {
                       <Image
                         src='https://cdn.dribbble.com/userupload/11353994/file/original-a9c8a327f628354c23a282a2b852c9f9.png?resize=2048x1536'
                         alt='Preview 1'
-                        width={500}
-                        height={500}
+                        width={400}
+                        height={400}
                       />
                     </motion.div>
                     <motion.p
