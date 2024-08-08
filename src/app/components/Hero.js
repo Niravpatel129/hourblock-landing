@@ -3,7 +3,7 @@ import { FaApple, FaChevronRight } from 'react-icons/fa';
 
 export default function Hero() {
   return (
-    <section className='flex flex-col items-center justify-center text-center py-20'>
+    <section className='flex flex-col items-center justify-center text-center pt-5'>
       <div className='flex space-x-4 mb-4 w-full items-center justify-evenly'>
         <Image src='/Webinar-amico.png' alt='Sun' width={400} height={400} />
         <div className='flex items-center justify-center flex-col'>
