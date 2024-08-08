@@ -1,12 +1,15 @@
 'use client';
 
+import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 
 export default function Home() {
   return (
-    <main className={`flex flex-col h-screen`}>
+    <main className={`flex flex-col h-screen bg-white`}>
       <Navbar />
-      <div className='flex-1 bg-white p-4'>Main Content</div>
+      <div className='flex-1  p-4'>
+        <Hero />
+      </div>
     </main>
   );
 }

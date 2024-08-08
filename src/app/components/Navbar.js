@@ -4,8 +4,8 @@ import { FaApple, FaTwitter } from 'react-icons/fa';
 
 export default function Navbar() {
   return (
-    <nav className='flex justify-between items-center px-4 bg-white shadow-md font-sans border-b border-gray-200'>
-      <div className='flex items-center space-x-4'>
+    <nav className='flex justify-center items-center px-4 bg-white font-sans border-b border-gray-200'>
+      <div className='flex items-center space-x-4 absolute left-4'>
         <Link href='https://twitter.com' legacyBehavior>
           <a className='flex items-center space-x-1'>
             <FaTwitter size={24} />
@@ -22,7 +22,7 @@ export default function Navbar() {
           height={76}
         />
       </div>
-      <div>
+      <div className='absolute right-4'>
         <button className='flex items-center px-4 py-2 bg-black text-white rounded-full space-x-2'>
           <span>Download</span>
           <FaApple size={24} />
