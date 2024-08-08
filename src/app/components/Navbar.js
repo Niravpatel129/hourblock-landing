@@ -1,9 +1,18 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
-import { FaApple, FaTwitter } from 'react-icons/fa';
+import { useState } from 'react';
+import { FaApple, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 export default function Navbar() {
+  const [toastMessage, setToastMessage] = useState('');
+
+  const showToast = (message) => {
+    setToastMessage(message);
+    setTimeout(() => {
+      setToastMessage('');
+    }, 3000);
+  };
+
   return (
     <nav className='flex justify-center items-center px-4 bg-white font-sans border-b border-gray-200'>
       <motion.div
@@ -12,12 +21,20 @@ export default function Navbar() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <Link href='https://twitter.com' legacyBehavior>
-          <a className='flex items-center space-x-1'>
-            <FaTwitter size={24} />
-            <span className='text-sm font-bold'>Twitter</span>
-          </a>
-        </Link>
+        <button
+          onClick={() => showToast('Twitter coming soon!')}
+          className='flex items-center space-x-1'
+        >
+          <FaTwitter size={24} />
+          <span className='text-sm font-bold'>Twitter</span>
+        </button>
+        <button
+          onClick={() => showToast('Instagram coming soon!')}
+          className='flex items-center space-x-1'
+        >
+          <FaInstagram size={24} />
+          <span className='text-sm font-bold'>Instagram</span>
+        </button>
       </motion.div>
       <motion.div
         className='flex items-center space-x-2'
@@ -44,6 +61,11 @@ export default function Navbar() {
           <FaApple size={24} />
         </button>
       </motion.div>
+      {toastMessage && (
+        <div className='fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-2 rounded'>
+          {toastMessage}
+        </div>
+      )}
     </nav>
   );
 }
