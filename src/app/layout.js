@@ -5,7 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'TimeBlock',
+  title: 'Hour Block',
   description:
     'An over-optimized todo list app with integrated Pomodoro tracking, created by an optimization wizard.',
 };
