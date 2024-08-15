@@ -66,7 +66,7 @@ export default function Navbar() {
         transition={{ duration: 0.5 }}
       >
         <a
-          href='https://github.com/Niravpatel129/timebank/releases/download/v1.0.27/Timebank-1.0.27-arm64.dmg'
+          href='https://github.com/Niravpatel129/timebank/releases/download/v1.0.31/HourBlock-1.0.31-arm64.dmg'
           className='flex items-center px-4 py-2 bg-black text-white rounded-full gap-2'
         >
           <span className='hidden md:block'>Download</span>
