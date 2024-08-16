@@ -1,6 +1,12 @@
 import { useEffect, useRef } from 'react';
 
-const Carousel = ({ items, containerHeight = '400px', autoPlayInterval = 5000, gap = '20px' }) => {
+const Carousel = ({
+  items,
+  containerHeight = '400px',
+  autoPlayInterval = 5000,
+  gap = '20px',
+  playbackRate = 1,
+}) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -38,6 +44,7 @@ const Carousel = ({ items, containerHeight = '400px', autoPlayInterval = 5000, g
                 loop
                 muted
                 playsInline
+                playbackRate={4}
               />
             ) : (
               <img

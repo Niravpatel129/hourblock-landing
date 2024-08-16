@@ -41,7 +41,7 @@ const HeroText = () => {
   };
 
   return (
-    <div className='text-center max-w-4xl mx-auto relative px-4'>
+    <div className='text-center max-w-5xl mx-auto relative px-4'>
       <Image
         src='https://ora.pm/_next/image?url=%2Ffeatures-overview%2Flightning.png&w=256&q=75'
         alt='Lightning'
@@ -56,7 +56,7 @@ const HeroText = () => {
         }}
       />
       <h1 className='text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-transparent bg-clip-text font-sans'>
-        Get more done with your team
+        Not Just a To-Do List, A Get-Things-Done List
       </h1>
       <Image
         src='https://ora.pm/_next/image?url=%2Ffeatures-overview%2Flightning.png&w=256&q=75'
@@ -72,9 +72,10 @@ const HeroText = () => {
         }}
       />
       <div className='text-lg md:text-xl text-gray-700 leading-relaxed'>
-        A task manager enhancing productivity. Collaborate and implement with your team. Maximize
-        task impact. Join us for streamlined workflow. Improve organization and efficiency. Discover
-        productivity potential. Elevate teamwork with our innovative platform.
+        Forget endless lists that go nowhere. We&apos;re here to supercharge your productivity. Our
+        task manager doesn&apos;t just track tasks; it propels them to completion. Watch as your
+        team transforms from busy to unstoppable. Ready to stop listing and start conquering?
+        It&apos;s time to rewrite your productivity story. Are you in?
       </div>
       <div className='flex justify-center mt-8'>
         <motion.a
@@ -86,7 +87,7 @@ const HeroText = () => {
           href={DOWNLOAD_LINK}
           className='inline-flex px-6 py-3 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white rounded-full text-sm md:text-lg items-center space-x-2 font-sans font-semibold'
         >
-          <span>Download</span>
+          <span>Start Getting Things Done</span>
           <FaApple color='white' size={24} />
         </motion.a>
       </div>

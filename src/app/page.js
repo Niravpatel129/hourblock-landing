@@ -14,36 +14,40 @@ export default function Home() {
         <Carousel
           items={[
             {
-              type: 'image',
-              src: 'https://assets.ora.pm/landing/header-videos/timeline.jpg',
+              type: 'video',
+              src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/1.mov?alt=media&token=c38c8d98-4d18-42c8-b781-0443169c3add',
             },
             {
               type: 'video',
-              src: 'https://assets.ora.pm/landing/header-videos/time-tracking-drag.mp4',
-            },
-            {
-              type: 'image',
-              src: 'https://ora.pm/_next/image?url=https%3A%2F%2Fassets.ora.pm%2Flanding%2Fheader-videos%2Fchat.jpg&w=828&q=75',
-            },
-            {
-              type: 'video',
-              src: 'https://assets.ora.pm/landing/header-videos/time-tracking-drag.mp4',
-            },
-            {
-              type: 'video',
-              src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
-            },
-            {
-              type: 'video',
-              src: 'https://assets.ora.pm/landing/header-videos/time-tracking-drag.mp4',
-            },
-            {
-              type: 'video',
-              src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+              src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/2.mov?alt=media&token=45bb5968-925e-4d24-9968-7169084f2dcb',
             },
             {
               type: 'image',
-              src: 'https://assets.ora.pm/landing/header-videos/timeline.jpg',
+              src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/21a.png?alt=media&token=e32a7e48-02cb-418b-83f8-860750be2a7f',
+            },
+            {
+              type: 'video',
+              src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/3.mov?alt=media&token=b63b6d78-2027-4b21-9103-3bd38a3b29a9',
+            },
+            {
+              type: 'image',
+              src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/Pasted%20Graphic.png?alt=media&token=60bf0b1d-d618-4344-aa67-7d8ea169e956',
+            },
+            {
+              type: 'video',
+              src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/5.mov?alt=media&token=7ea120a3-88aa-41f1-a5b0-67e8e5a15eeb',
+            },
+            {
+              type: 'video',
+              src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/6.mov?alt=media&token=301f55f1-d0ea-4d56-a0d6-e0f76b2c2481',
+            },
+            {
+              type: 'video',
+              src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/7.mov?alt=media&token=33f07f08-9d0a-4a0a-a685-7700e2ff5575',
+            },
+            {
+              type: 'image',
+              src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/Pasted%20Graphic%202.png?alt=media&token=54b32f0e-ff58-4889-9467-07c12fdc204f',
             },
           ]}
         />
