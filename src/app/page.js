@@ -76,7 +76,7 @@ export default function Home() {
         <motion.div className='mt-32' variants={fadeInVariants}>
           <TwitterFeedback />
         </motion.div>
-        <motion.div className='-mt-8' variants={fadeInVariants}>
+        <motion.div className='' variants={fadeInVariants}>
           <ImageWithSlider />
         </motion.div>
 
