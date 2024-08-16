@@ -5,23 +5,38 @@ import { FaApple } from 'react-icons/fa';
 
 const HeroText = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     const handleMouseMove = (event) => {
       setMousePosition({ x: event.clientX, y: event.clientY });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+    const handleResize = () => {
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
     };
+
+    // Initialize window size
+    handleResize();
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   }, []);
 
   const calculateImagePosition = () => {
-    const moveX = (mousePosition.x - window.innerWidth / 2) / 50;
-    const moveY = (mousePosition.y - window.innerHeight / 2) / 50;
-    return `translate(${moveX}px, ${moveY}px)`;
+    if (typeof window !== 'undefined') {
+      const moveX = (mousePosition.x - windowSize.width / 2) / 50;
+      const moveY = (mousePosition.y - windowSize.height / 2) / 50;
+      return `translate(${moveX}px, ${moveY}px)`;
+    }
+    return 'translate(0px, 0px)';
   };
 
   return (
