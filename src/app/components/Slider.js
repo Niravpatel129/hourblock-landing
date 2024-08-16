@@ -54,7 +54,6 @@ const Slider = ({ labels, sliderPosition, onSliderChange }) => {
           style={{
             width: `${(activeIndex / (labels.length - 1)) * 100}%`,
           }}
-          fill
         />
       </motion.div>
       <AnimatePresence mode='wait'>

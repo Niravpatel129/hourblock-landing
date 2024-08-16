@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 
 const Carousel = ({
@@ -44,13 +45,15 @@ const Carousel = ({
                 loop
                 muted
                 playsInline
-                playbackRate={4}
+                playbackrate={playbackRate}
               />
             ) : (
-              <img
+              <Image
                 src={item.src}
                 alt={`Carousel item ${index}`}
                 className='h-full w-auto object-cover rounded-lg'
+                width={500}
+                height={500}
               />
             )}
           </div>

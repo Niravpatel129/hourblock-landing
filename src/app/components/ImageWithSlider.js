@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Slider from './Slider.js';
@@ -40,27 +40,25 @@ export default function ImageWithSlider() {
         <div className='rounded-3xl overflow-hidden  shadow-lg h-full'>
           {' '}
           {/* Increased border width from 8 to 12 */}
-          <AnimatePresence mode='wait'>
-            {images.map((src, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: index === currentImage ? 1 : 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-              >
-                <Image
-                  src={src}
-                  alt={`Productivity level: ${labels[index]}`}
-                  objectFit='cover'
-                  priority={index === currentImage}
-                  className='rounded-2xl'
-                  fill
-                />
-              </motion.div>
-            ))}
-          </AnimatePresence>
+          {images.map((src, index) => (
+            <motion.div
+              key={+index}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: index === currentImage ? 1 : 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+            >
+              <Image
+                src={src}
+                alt={`Productivity level: ${labels[index]}`}
+                priority={index === currentImage}
+                className='rounded-2xl'
+                fill={+true}
+                style={{ objectFit: 'cover' }}
+              />
+            </motion.div>
+          ))}
         </div>
       </div>
       <div className='absolute bottom-10 left-1/2 transform -translate-x-1/2 w-3/4 max-w-md'>

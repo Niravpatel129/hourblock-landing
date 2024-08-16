@@ -41,22 +41,22 @@ const TwitterFeedback = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const container = containerRef.current;
-    if (container) {
-      const preventScroll = (e) => {
-        e.preventDefault();
-      };
+  //   useEffect(() => {
+  //     const container = containerRef.current;
+  //     if (container) {
+  //       const preventScroll = (e) => {
+  //         e.preventDefault();
+  //       };
 
-      container.addEventListener('wheel', preventScroll, { passive: false });
-      container.addEventListener('touchmove', preventScroll, { passive: false });
+  //       container.addEventListener('wheel', preventScroll, { passive: false });
+  //       container.addEventListener('touchmove', preventScroll, { passive: false });
 
-      return () => {
-        container.removeEventListener('wheel', preventScroll);
-        container.removeEventListener('touchmove', preventScroll);
-      };
-    }
-  }, []);
+  //       return () => {
+  //         container.removeEventListener('wheel', preventScroll);
+  //         container.removeEventListener('touchmove', preventScroll);
+  //       };
+  //     }
+  //   }, []);
 
   return (
     <div className='w-full overflow-hidden bg-white'>
@@ -77,7 +77,10 @@ const TwitterFeedback = () => {
           }
         `}</style>
         {randomizedTweets.map((tweet, index) => (
-          <div key={`${tweet.id}-${index}`} className='flex-shrink-0 w-80 mx-2'>
+          <div
+            key={`${tweet.id}-${index}`}
+            className='flex-shrink-0 w-80 mx-2 cursor-pointer select-none'
+          >
             <div className='tweet-card bg-white rounded-lg shadow-md p-6 border border-[#E1E8ED] text-[#14171A] flex flex-col'>
               <div className='flex justify-between items-start mb-4'>
                 <Image

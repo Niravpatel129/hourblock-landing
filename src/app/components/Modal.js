@@ -70,7 +70,7 @@ const Modal = ({ isOpen, onClose }) => {
                       src='https://cdn.dribbble.com/userupload/11353994/file/original-a9c8a327f628354c23a282a2b852c9f9.png?resize=2048x1536'
                       alt='Preview 1'
                       fill
-                      objectFit='contain'
+                      style={{ objectFit: 'cover' }}
                     />
                   </div>
                 </motion.div>
