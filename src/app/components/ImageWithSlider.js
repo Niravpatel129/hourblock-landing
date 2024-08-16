@@ -33,7 +33,9 @@ export default function ImageWithSlider() {
     <div className='relative w-full min-h-screen flex flex-col justify-center items-center pb-[100px] bg-gradient-to-r from-white via-gray-100 to-white'>
       <div className='absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-white to-transparent'></div>
       <div className='absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent'></div>
-      <h2 className='text-6xl font-bold mb-8 text-blue-800'>Choose Your Productivity Level</h2>
+      <h2 className='text-6xl font-bold mb-8 text-blue-800 text-center'>
+        Choose Your Productivity Level
+      </h2>
       <div className='relative z-10 w-3/4 h-[70vh] max-w-5xl border-4 border-black rounded-3xl overflow-hidden'>
         {' '}
         {/* Increased height from 60vh to 70vh */}
