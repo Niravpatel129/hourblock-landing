@@ -19,7 +19,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className='flex justify-between items-center px-2 md:px-4 bg-white font-sans border-b border-gray-200'>
+    <nav className='flex justify-between items-center px-2 md:px-4 bg-white font-sans '>
       <motion.div
         className='flex items-center space-x-4'
         initial={{ opacity: 0, x: -50 }}

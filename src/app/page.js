@@ -45,7 +45,7 @@ export default function Home() {
             },
           ]}
         />
-        <div className='-mt-72 relative z-10'>
+        <div className='-mt-60 relative z-10'>
           <HeroText />
         </div>
       </div>
