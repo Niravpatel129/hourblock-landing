@@ -9,6 +9,24 @@ import ImageWithSlider from './components/ImageWithSlider';
 import Navbar from './components/Navbar';
 import TwitterFeedback from './components/TwitterFeedback';
 
+// Import the functions you need from the SDKs you need
+import { getAnalytics } from 'firebase/analytics';
+import { initializeApp } from 'firebase/app';
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: 'AIzaSyCGL__U8Jyoc2Tx464hqpebdqxP67-RxZU',
+  authDomain: 'hour-block.firebaseapp.com',
+  projectId: 'hour-block',
+  storageBucket: 'hour-block.appspot.com',
+  messagingSenderId: '268186241424',
+  appId: '1:268186241424:web:c594017a41d0bf644f0b15',
+  measurementId: 'G-D2PL9QPL1F',
+};
+
 const fadeInVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { duration: 1.5 } },
@@ -18,6 +36,10 @@ export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
