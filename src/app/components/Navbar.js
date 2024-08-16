@@ -16,7 +16,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className='flex justify-between items-center px-2 md:px-4 bg-white font-sans '>
+    <nav className='flex justify-between items-center px-2 md:px-4 bg-white font-sans mt-4 '>
       <motion.div
         className='flex items-center space-x-4'
         initial={{ opacity: 0, x: -50 }}

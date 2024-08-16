@@ -10,12 +10,12 @@ const Slider = ({ labels, sliderPosition, onSliderChange }) => {
     setActiveIndex(sliderPosition);
   }, [sliderPosition]);
 
-  const handleClick = useCallback(
+  const handleInteraction = useCallback(
     (event) => {
       if (sliderRef.current) {
         const sliderRect = sliderRef.current.getBoundingClientRect();
-        const clickPosition = (event.clientX - sliderRect.left) / sliderRect.width;
-        const newIndex = Math.round(clickPosition * (labels.length - 1));
+        const interactionPosition = (event.clientX - sliderRect.left) / sliderRect.width;
+        const newIndex = Math.round(interactionPosition * (labels.length - 1));
 
         if (newIndex >= 0 && newIndex < labels.length) {
           setActiveIndex(newIndex);
@@ -46,7 +46,8 @@ const Slider = ({ labels, sliderPosition, onSliderChange }) => {
         ref={sliderRef}
         className='w-full h-4 bg-gray-200 rounded-full relative cursor-pointer'
         whileHover={{ height: '16px', transition: { duration: 0.2 } }}
-        onClick={handleClick}
+        onClick={handleInteraction}
+        onMouseMove={handleInteraction}
       >
         <motion.div
           className='h-full bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full'

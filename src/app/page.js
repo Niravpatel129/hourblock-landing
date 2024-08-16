@@ -1,6 +1,7 @@
 'use client';
 
 import Carousel from './components/Carousel';
+import Features from './components/Features';
 import HeroText from './components/HeroText';
 import ImageWithSlider from './components/ImageWithSlider';
 import Navbar from './components/Navbar';
@@ -9,7 +10,7 @@ export default function Home() {
   return (
     <main className={`flex flex-col h-screen bg-white`}>
       <Navbar />
-      <div className='flex-1 mt-16'>
+      <div className='flex-1 mt-12'>
         <Carousel
           items={[
             {
@@ -46,11 +47,14 @@ export default function Home() {
             },
           ]}
         />
-        <div className=' relative z-10 -mt-52'>
+        <div className=' relative z-10 -mt-64'>
           <HeroText />
         </div>
-        <div className='-10'>
+        <div className='mt-20'>
           <ImageWithSlider />
+        </div>
+        <div className='mt-20'>
+          <Features />
         </div>
       </div>
     </main>

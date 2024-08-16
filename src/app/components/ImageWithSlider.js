@@ -1,32 +1,66 @@
+import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Slider from './Slider.js';
 
 export default function ImageWithSlider() {
   const [sliderPosition, setSliderPosition] = useState(2); // Default to middle position
+  const [currentImage, setCurrentImage] = useState(2);
 
   const labels = ['Simplicity', 'Todo List', 'Tasks & Subtasks', 'Basic Tracking', 'Raw Power'];
+
+  const images = [
+    'https://nethunt.com/blog/content/images/2024/01/1.png',
+    'https://nethunt.com/blog/content/images/2024/01/2.png',
+    'https://nethunt.com/blog/content/images/2024/01/3.png',
+    'https://nethunt.com/blog/content/images/2024/01/4.png',
+    'https://nethunt.com/blog/content/images/2024/01/5.png',
+  ];
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCurrentImage(sliderPosition);
+    }, 300); // Delay image change to allow for fade effect
+
+    return () => clearTimeout(timer);
+  }, [sliderPosition]);
 
   const handleSliderChange = (index) => {
     setSliderPosition(index);
   };
 
   return (
-    <div className='-mt-5 relative w-full h-full bg-gradient-to-r from-white via-gray-100 to-white min-h-screen flex flex-col justify-center items-center'>
+    <div className='relative w-full min-h-screen flex flex-col justify-center items-center pb-[100px] bg-gradient-to-r from-white via-gray-100 to-white'>
       <div className='absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-white to-transparent'></div>
       <div className='absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent'></div>
-      <h2 className='text-6xl font-bold mb-8 text-gray-800'>Choose Your Productivity Level</h2>
-      <div className='relative z-10 w-3/4 h-3/4 max-w-4xl max-h-4xl'>
-        <div className='rounded-3xl overflow-hidden border-8 border-white shadow-lg'>
-          <Image
-            src='https://nethunt.com/blog/content/images/2024/01/1.png'
-            alt='Big image in the middle'
-            width={800}
-            height={600}
-            layout='responsive'
-            priority
-            className='rounded-2xl'
-          />
+      <h2 className='text-6xl font-bold mb-8 text-blue-800'>Choose Your Productivity Level</h2>
+      <div className='relative z-10 w-3/4 h-[70vh] max-w-5xl border-4 border-black rounded-3xl overflow-hidden'>
+        {' '}
+        {/* Increased height from 60vh to 70vh */}
+        <div className='rounded-3xl overflow-hidden  shadow-lg h-full'>
+          {' '}
+          {/* Increased border width from 8 to 12 */}
+          <AnimatePresence mode='wait'>
+            {images.map((src, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: index === currentImage ? 1 : 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+              >
+                <Image
+                  src={src}
+                  alt={`Productivity level: ${labels[index]}`}
+                  layout='fill'
+                  objectFit='cover'
+                  priority={index === currentImage}
+                  className='rounded-2xl'
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
       </div>
       <div className='absolute bottom-10 left-1/2 transform -translate-x-1/2 w-3/4 max-w-md'>
