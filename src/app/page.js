@@ -54,7 +54,7 @@ export default function Home() {
         <div className=' relative z-10 -mt-64'>
           <HeroText />
         </div>
-        <div className='mt-20'>
+        <div className='mt-32'>
           <ImageWithSlider />
         </div>
         <div className='mt-20'>
