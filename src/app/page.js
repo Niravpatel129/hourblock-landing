@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import Carousel from './components/Carousel';
 import Features from './components/Features';
 import HeroText from './components/HeroText';
@@ -14,9 +15,23 @@ const fadeInVariants = {
 };
 
 export default function Home() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
     <motion.main
-      className={`flex flex-col h-screen bg-white`}
+      className={`flex flex-col min-h-screen bg-white overflow-y-auto`}
       initial='hidden'
       animate='visible'
       variants={fadeInVariants}
@@ -84,6 +99,13 @@ export default function Home() {
           <Features />
         </motion.div>
       </div>
+
+      <motion.div
+        className='fixed top-0 left-0 w-full h-full pointer-events-none z-50'
+        animate={{
+          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
+        }}
+      />
     </motion.main>
   );
 }
