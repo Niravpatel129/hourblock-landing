@@ -5,7 +5,7 @@ import Features from './components/Features';
 import HeroText from './components/HeroText';
 import ImageWithSlider from './components/ImageWithSlider';
 import Navbar from './components/Navbar';
-
+import TwitterFeedback from './components/TwitterFeedback';
 export default function Home() {
   return (
     <main className={`flex flex-col h-screen bg-white`}>
@@ -51,12 +51,18 @@ export default function Home() {
             },
           ]}
         />
-        <div className=' relative z-10 -mt-64'>
+
+        <div className=' relative z-10 -mt-72 flex flex-col items-center'>
           <HeroText />
+        </div>
+
+        <div className='mt-32'>
+          <TwitterFeedback />
         </div>
         <div className='mt-32'>
           <ImageWithSlider />
         </div>
+
         <div className='mt-20'>
           <Features />
         </div>

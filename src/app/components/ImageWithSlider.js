@@ -53,10 +53,10 @@ export default function ImageWithSlider() {
                 <Image
                   src={src}
                   alt={`Productivity level: ${labels[index]}`}
-                  layout='fill'
                   objectFit='cover'
                   priority={index === currentImage}
                   className='rounded-2xl'
+                  fill
                 />
               </motion.div>
             ))}
