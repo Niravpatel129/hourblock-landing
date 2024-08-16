@@ -56,7 +56,7 @@ const HeroText = () => {
         }}
       />
       <h1 className='text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-transparent bg-clip-text font-sans'>
-        Not Just a To-Do List, A Get-Things-Done List
+        Not Just a To-Do List, A Get-Things-Done App
       </h1>
       <Image
         src='https://ora.pm/_next/image?url=%2Ffeatures-overview%2Flightning.png&w=256&q=75'
@@ -87,7 +87,7 @@ const HeroText = () => {
           href={DOWNLOAD_LINK}
           className='inline-flex px-6 py-3 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white rounded-full text-sm md:text-lg items-center space-x-2 font-sans font-semibold'
         >
-          <span>Start Getting Things Done</span>
+          <span>Download Mac</span>
           <FaApple color='white' size={24} />
         </motion.a>
       </div>
