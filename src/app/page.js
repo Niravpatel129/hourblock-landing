@@ -2,6 +2,7 @@
 
 import Carousel from './components/Carousel';
 import HeroText from './components/HeroText';
+import ImageWithSlider from './components/ImageWithSlider';
 import Navbar from './components/Navbar';
 
 export default function Home() {
@@ -12,8 +13,16 @@ export default function Home() {
         <Carousel
           items={[
             {
+              type: 'image',
+              src: 'https://assets.ora.pm/landing/header-videos/timeline.jpg',
+            },
+            {
               type: 'video',
-              src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+              src: 'https://assets.ora.pm/landing/header-videos/time-tracking-drag.mp4',
+            },
+            {
+              type: 'image',
+              src: 'https://ora.pm/_next/image?url=https%3A%2F%2Fassets.ora.pm%2Flanding%2Fheader-videos%2Fchat.jpg&w=828&q=75',
             },
             {
               type: 'video',
@@ -32,21 +41,16 @@ export default function Home() {
               src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
             },
             {
-              type: 'video',
-              src: 'https://assets.ora.pm/landing/header-videos/time-tracking-drag.mp4',
-            },
-            {
-              type: 'video',
-              src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
-            },
-            {
-              type: 'video',
-              src: 'https://assets.ora.pm/landing/header-videos/time-tracking-drag.mp4',
+              type: 'image',
+              src: 'https://assets.ora.pm/landing/header-videos/timeline.jpg',
             },
           ]}
         />
-        <div className='-mt-60 relative z-10'>
+        <div className=' relative z-10 -mt-52'>
           <HeroText />
+        </div>
+        <div className='-10'>
+          <ImageWithSlider />
         </div>
       </div>
     </main>

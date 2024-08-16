@@ -11,7 +11,7 @@ const Carousel = ({ items, containerHeight = '400px', autoPlayInterval = 5000, g
       if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
         container.scrollLeft = 0;
       } else {
-        container.scrollLeft += 1;
+        container.scrollLeft += 0.5; // Changed from 1 to 0.5 to half the scroll speed
       }
       animationId = requestAnimationFrame(animate);
     };
@@ -49,7 +49,7 @@ const Carousel = ({ items, containerHeight = '400px', autoPlayInterval = 5000, g
           </div>
         ))}
       </div>
-      <div className='absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-t from-white to-transparent pointer-events-none'></div>
+      <div className='absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none'></div>
     </div>
   );
 };
