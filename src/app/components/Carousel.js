@@ -49,7 +49,7 @@ const Carousel = ({ items, containerHeight = '400px', autoPlayInterval = 5000, g
           </div>
         ))}
       </div>
-      <div className='absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none'></div>
+      <div className='absolute bottom-0 left-0 right-0 h-[900px] bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none'></div>
     </div>
   );
 };

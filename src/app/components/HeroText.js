@@ -1,3 +1,4 @@
+import { DOWNLOAD_LINK } from '@/utils/config';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -82,7 +83,7 @@ const HeroText = () => {
           transition={{ duration: 0.5 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          href='https://github.com/Niravpatel129/timebank/releases/download/v1.0.31/HourBlock-1.0.31-arm64.dmg'
+          href={DOWNLOAD_LINK}
           className='inline-flex px-6 py-3 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white rounded-full text-sm md:text-lg items-center space-x-2 font-sans font-semibold'
         >
           <span>Download</span>
