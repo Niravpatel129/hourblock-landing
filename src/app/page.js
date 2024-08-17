@@ -51,6 +51,7 @@ export default function Home() {
       const API_VERSION = 'v17.0'; // Update this to the latest version
       const PIXEL_ID = '1234567890';
       const TOKEN = process.env.NEXT_PUBLIC_FACEBOOK_TOKEN;
+      console.log('🚀  TOKEN:', TOKEN);
 
       const eventData = {
         data: [
