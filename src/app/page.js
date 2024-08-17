@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Script from 'next/script';
 import { useEffect, useState } from 'react';
 import Carousel from './components/Carousel';
 import Features from './components/Features';
@@ -51,7 +52,6 @@ export default function Home() {
       const API_VERSION = 'v17.0'; // Update this to the latest version
       const PIXEL_ID = '1234567890';
       const TOKEN = process.env.NEXT_PUBLIC_FACEBOOK_TOKEN;
-      console.log('🚀  TOKEN:', TOKEN);
 
       const eventData = {
         data: [
@@ -89,82 +89,106 @@ export default function Home() {
   }, []);
 
   return (
-    <motion.main
-      className={`flex flex-col min-h-screen bg-white overflow-y-auto`}
-      initial='hidden'
-      animate='visible'
-      variants={fadeInVariants}
-    >
-      <Navbar />
-      <div className='flex-1 mt-12'>
-        <motion.div variants={fadeInVariants}>
-          <Carousel
-            items={[
-              {
-                type: 'video',
-                src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/1.mov?alt=media&token=c38c8d98-4d18-42c8-b781-0443169c3add',
-              },
-              {
-                type: 'video',
-                src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/2.mov?alt=media&token=45bb5968-925e-4d24-9968-7169084f2dcb',
-              },
-              {
-                type: 'image',
-                src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/21a.png?alt=media&token=e32a7e48-02cb-418b-83f8-860750be2a7f',
-              },
-              {
-                type: 'video',
-                src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/3.mov?alt=media&token=b63b6d78-2027-4b21-9103-3bd38a3b29a9',
-              },
-              {
-                type: 'image',
-                src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/Pasted%20Graphic.png?alt=media&token=60bf0b1d-d618-4344-aa67-7d8ea169e956',
-              },
-              {
-                type: 'video',
-                src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/5.mov?alt=media&token=7ea120a3-88aa-41f1-a5b0-67e8e5a15eeb',
-              },
-              {
-                type: 'video',
-                src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/6.mov?alt=media&token=301f55f1-d0ea-4d56-a0d6-e0f76b2c2481',
-              },
-              {
-                type: 'video',
-                src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/7.mov?alt=media&token=33f07f08-9d0a-4a0a-a685-7700e2ff5575',
-              },
-              {
-                type: 'image',
-                src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/Pasted%20Graphic%202.png?alt=media&token=54b32f0e-ff58-4889-9467-07c12fdc204f',
-              },
-            ]}
-          />
-        </motion.div>
+    <>
+      <Script strategy='afterInteractive' id='facebook-pixel'>
+        {`
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '8018464834939308');
+          fbq('track', 'PageView');
+        `}
+      </Script>
+      <noscript>
+        <img
+          height='1'
+          width='1'
+          style={{ display: 'none' }}
+          src='https://www.facebook.com/tr?id=8018464834939308&ev=PageView&noscript=1'
+        />
+      </noscript>
+      <motion.main
+        className={`flex flex-col min-h-screen bg-white overflow-y-auto`}
+        initial='hidden'
+        animate='visible'
+        variants={fadeInVariants}
+      >
+        <Navbar />
+        <div className='flex-1 mt-12'>
+          <motion.div variants={fadeInVariants}>
+            <Carousel
+              items={[
+                {
+                  type: 'video',
+                  src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/1.mov?alt=media&token=c38c8d98-4d18-42c8-b781-0443169c3add',
+                },
+                {
+                  type: 'video',
+                  src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/2.mov?alt=media&token=45bb5968-925e-4d24-9968-7169084f2dcb',
+                },
+                {
+                  type: 'image',
+                  src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/21a.png?alt=media&token=e32a7e48-02cb-418b-83f8-860750be2a7f',
+                },
+                {
+                  type: 'video',
+                  src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/3.mov?alt=media&token=b63b6d78-2027-4b21-9103-3bd38a3b29a9',
+                },
+                {
+                  type: 'image',
+                  src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/Pasted%20Graphic.png?alt=media&token=60bf0b1d-d618-4344-aa67-7d8ea169e956',
+                },
+                {
+                  type: 'video',
+                  src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/5.mov?alt=media&token=7ea120a3-88aa-41f1-a5b0-67e8e5a15eeb',
+                },
+                {
+                  type: 'video',
+                  src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/6.mov?alt=media&token=301f55f1-d0ea-4d56-a0d6-e0f76b2c2481',
+                },
+                {
+                  type: 'video',
+                  src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/7.mov?alt=media&token=33f07f08-9d0a-4a0a-a685-7700e2ff5575',
+                },
+                {
+                  type: 'image',
+                  src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/Pasted%20Graphic%202.png?alt=media&token=54b32f0e-ff58-4889-9467-07c12fdc204f',
+                },
+              ]}
+            />
+          </motion.div>
+
+          <motion.div
+            className='relative z-10 -mt-72 flex flex-col items-center'
+            variants={fadeInVariants}
+          >
+            <HeroText />
+          </motion.div>
+
+          <motion.div className='mt-32' variants={fadeInVariants}>
+            <TwitterFeedback />
+          </motion.div>
+          <motion.div className='' variants={fadeInVariants}>
+            <ImageWithSlider />
+          </motion.div>
+
+          <motion.div className='mt-20' variants={fadeInVariants}>
+            <Features />
+          </motion.div>
+        </div>
 
         <motion.div
-          className='relative z-10 -mt-72 flex flex-col items-center'
-          variants={fadeInVariants}
-        >
-          <HeroText />
-        </motion.div>
-
-        <motion.div className='mt-32' variants={fadeInVariants}>
-          <TwitterFeedback />
-        </motion.div>
-        <motion.div className='' variants={fadeInVariants}>
-          <ImageWithSlider />
-        </motion.div>
-
-        <motion.div className='mt-20' variants={fadeInVariants}>
-          <Features />
-        </motion.div>
-      </div>
-
-      <motion.div
-        className='fixed top-0 left-0 w-full h-full pointer-events-none z-50'
-        animate={{
-          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
-        }}
-      />
-    </motion.main>
+          className='fixed top-0 left-0 w-full h-full pointer-events-none z-50'
+          animate={{
+            background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
+          }}
+        />
+      </motion.main>
+    </>
   );
 }
