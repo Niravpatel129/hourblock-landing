@@ -49,7 +49,7 @@ export default function Home() {
     // Facebook Conversions API
     const sendFacebookEvent = async () => {
       const API_VERSION = 'v17.0'; // Update this to the latest version
-      const PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
+      const PIXEL_ID = '1234567890';
       const TOKEN = process.env.NEXT_PUBLIC_FACEBOOK_TOKEN;
 
       const eventData = {

@@ -2,9 +2,9 @@
 
 import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
-export default function VerifyEmail() {
+function VerifyEmailContent() {
   const [verificationStatus, setVerificationStatus] = useState('Verifying...');
   const searchParams = useSearchParams();
 
@@ -31,5 +31,13 @@ export default function VerifyEmail() {
       <h1 className='text-3xl font-bold mb-4'>Email Verification</h1>
       <p className='text-xl'>{verificationStatus}</p>
     </div>
+  );
+}
+
+export default function VerifyEmail() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <VerifyEmailContent />
+    </Suspense>
   );
 }
