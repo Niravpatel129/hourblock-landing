@@ -46,6 +46,42 @@ export default function Home() {
 
     window.addEventListener('mousemove', handleMouseMove);
 
+    // Facebook Conversions API
+    const sendFacebookEvent = async () => {
+      const API_VERSION = 'v17.0'; // Update this to the latest version
+      const PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
+      const TOKEN = process.env.NEXT_PUBLIC_FACEBOOK_TOKEN;
+
+      const eventData = {
+        data: [
+          {
+            event_name: 'PageView',
+            event_time: Math.floor(Date.now() / 1000),
+            action_source: 'website',
+          },
+        ],
+      };
+
+      try {
+        const response = await fetch(
+          `https://graph.facebook.com/${API_VERSION}/${PIXEL_ID}/events?access_token=${TOKEN}`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(eventData),
+          },
+        );
+        const result = await response.json();
+        console.log('Facebook event sent:', result);
+      } catch (error) {
+        console.error('Error sending Facebook event:', error);
+      }
+    };
+
+    sendFacebookEvent();
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
