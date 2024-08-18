@@ -64,6 +64,7 @@ export default function Home() {
       };
 
       if (!validateIpAddress(ipAddress)) {
+        console.log('Invalid IP address:', ipAddress);
         setIpError('The IP address you entered is invalid. Enter a valid IP address.');
         return;
       }
