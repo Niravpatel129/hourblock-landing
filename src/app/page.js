@@ -51,6 +51,12 @@ export default function Home() {
 
     window.addEventListener('mousemove', handleMouseMove);
 
+    // Fetch IP address
+    fetch('https://api.ipify.org?format=json')
+      .then((response) => response.json())
+      .then((data) => setIpAddress(data.ip))
+      .catch((error) => console.error('Error fetching IP:', error));
+
     // Facebook Conversions API
     const sendFacebookEvent = async (eventName) => {
       const API_VERSION = 'v17.0'; // Update this to the latest version
