@@ -116,14 +116,23 @@ export default function Home() {
 
     // Add event listener to download button
     const downloadButton = document.querySelector('#download-button');
+    const downloadHeroButton = document.querySelector('#download-hero-button');
+
     if (downloadButton) {
       downloadButton.addEventListener('click', trackDownload);
+    }
+    if (downloadHeroButton) {
+      downloadHeroButton.addEventListener('click', trackDownload);
     }
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       if (downloadButton) {
         downloadButton.removeEventListener('click', trackDownload);
+      }
+
+      if (downloadHeroButton) {
+        downloadHeroButton.removeEventListener('click', trackDownload);
       }
     };
   }, [ipAddress]);
