@@ -61,6 +61,10 @@ export default function Home() {
             event_name: eventName,
             event_time: Math.floor(Date.now() / 1000),
             action_source: 'website',
+            user_data: {
+              client_ip_address: '{{client_ip_address}}',
+              client_user_agent: '{{client_user_agent}}',
+            },
           },
         ],
       };
