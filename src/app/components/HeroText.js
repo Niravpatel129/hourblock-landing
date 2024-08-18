@@ -79,6 +79,7 @@ const HeroText = () => {
       </div>
       <div className='flex justify-center mt-8'>
         <motion.a
+          id='download-button'
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}

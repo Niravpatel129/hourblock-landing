@@ -50,15 +50,15 @@ export default function Home() {
     window.addEventListener('mousemove', handleMouseMove);
 
     // Facebook Conversions API
-    const sendFacebookEvent = async () => {
+    const sendFacebookEvent = async (eventName) => {
       const API_VERSION = 'v17.0'; // Update this to the latest version
-      const PIXEL_ID = '1234567890';
+      const PIXEL_ID = '8018464834939308';
       const TOKEN = process.env.NEXT_PUBLIC_FACEBOOK_TOKEN;
 
       const eventData = {
         data: [
           {
-            event_name: 'PageView',
+            event_name: eventName,
             event_time: Math.floor(Date.now() / 1000),
             action_source: 'website',
           },
@@ -83,10 +83,24 @@ export default function Home() {
       }
     };
 
-    sendFacebookEvent();
+    sendFacebookEvent('PageView');
+
+    // Track download event
+    const trackDownload = () => {
+      sendFacebookEvent('Download');
+    };
+
+    // Add event listener to download button
+    const downloadButton = document.querySelector('#download-button');
+    if (downloadButton) {
+      downloadButton.addEventListener('click', trackDownload);
+    }
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      if (downloadButton) {
+        downloadButton.removeEventListener('click', trackDownload);
+      }
     };
   }, []);
 

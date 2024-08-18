@@ -59,6 +59,7 @@ export default function Navbar() {
       >
         <a
           href={DOWNLOAD_LINK}
+          id='download-button'
           className='flex items-center px-4 py-2 bg-black text-white rounded-full gap-2'
         >
           <span className='hidden md:block'>Download</span>
