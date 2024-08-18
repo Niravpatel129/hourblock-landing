@@ -37,6 +37,8 @@ const fadeInVariants = {
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [ipAddress, setIpAddress] = useState('');
+  const [ipError, setIpError] = useState('');
 
   useEffect(() => {
     // Initialize Firebase
@@ -55,6 +57,17 @@ export default function Home() {
       const PIXEL_ID = '8018464834939308';
       const TOKEN = process.env.NEXT_PUBLIC_FACEBOOK_TOKEN;
 
+      const validateIpAddress = (ip) => {
+        const ipRegex =
+          /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+        return ipRegex.test(ip);
+      };
+
+      if (!validateIpAddress(ipAddress)) {
+        setIpError('The IP address you entered is invalid. Enter a valid IP address.');
+        return;
+      }
+
       const eventData = {
         data: [
           {
@@ -62,7 +75,7 @@ export default function Home() {
             event_time: Math.floor(Date.now() / 1000),
             action_source: 'website',
             user_data: {
-              client_ip_address: '{{client_ip_address}}',
+              client_ip_address: ipAddress,
               client_user_agent: '{{client_user_agent}}',
             },
           },
@@ -106,7 +119,7 @@ export default function Home() {
         downloadButton.removeEventListener('click', trackDownload);
       }
     };
-  }, []);
+  }, [ipAddress]);
 
   return (
     <>
