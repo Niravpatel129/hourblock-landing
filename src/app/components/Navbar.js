@@ -1,4 +1,3 @@
-import { DOWNLOAD_LINK } from '@/utils/config';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -58,8 +57,7 @@ export default function Navbar() {
         transition={{ duration: 0.5 }}
       >
         <a
-          href={DOWNLOAD_LINK}
-          id='download-button'
+          href='#downloads'
           className='flex items-center px-4 py-2 bg-black text-white rounded-full gap-2'
         >
           <span className='hidden md:block'>Download</span>
