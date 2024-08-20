@@ -173,6 +173,10 @@ export default function Home() {
             <Carousel
               items={[
                 {
+                  type: 'image',
+                  src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/1111111.png?alt=media&token=cc4cadf9-5cb2-4547-9a98-3119c16dff95',
+                },
+                {
                   type: 'video',
                   src: 'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/1.mov?alt=media&token=c38c8d98-4d18-42c8-b781-0443169c3add',
                 },
