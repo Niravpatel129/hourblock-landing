@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
-import { FaApple, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaInstagram, FaTwitter } from 'react-icons/fa';
 
 export default function Navbar() {
   const [toastMessage, setToastMessage] = useState('');
@@ -56,13 +56,7 @@ export default function Navbar() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <a
-          href='#downloads'
-          className='flex items-center px-4 py-2 bg-black text-white rounded-full gap-2'
-        >
-          <span className='hidden md:block'>Download</span>
-          <FaApple size={24} />
-        </a>
+        {/* <Link href='/blog'>Blog</Link> */}
       </motion.div>
       {toastMessage && (
         <div className='fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-2 rounded'>
