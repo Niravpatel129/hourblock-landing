@@ -11,7 +11,7 @@ export default function ImageWithSlider() {
 
   const images = [
     'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/Group%201.png?alt=media&token=14ded289-dae7-407b-abe1-feae53194934',
-    'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/Group%201.png?alt=media&token=14ded289-dae7-407b-abe1-feae53194934',
+    'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/Group%201%20(4).png?alt=media&token=cc92e443-c5cd-47ab-b402-d812c2f94932',
     'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/Group%201%20(1).png?alt=media&token=a40fa9fb-7616-4ae8-8ff2-be62a4381600',
     'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/Group%201%20(2).png?alt=media&token=56aef328-4565-49b3-a2ef-fa732c84af52',
     'https://firebasestorage.googleapis.com/v0/b/boloprint.appspot.com/o/Group%201%20(3).png?alt=media&token=3613ff28-f2aa-40ef-bc0d-19306070d231',
