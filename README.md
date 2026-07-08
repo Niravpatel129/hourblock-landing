@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# HourBlock Landing Page
 
-## Getting Started
+Marketing and download site for HourBlock, a desktop productivity app positioned around getting tasks completed instead of just tracking another to-do list.
 
-First, run the development server:
+The site is built with Next.js and includes animated landing-page sections, product media, download calls-to-action for macOS and Windows, Firebase analytics, and Meta tracking hooks for page-view and download events.
+
+## Features
+
+- Hero section with animated product messaging
+- Product carousel with hosted images and videos
+- Download buttons for macOS and Windows builds
+- Feature, feedback, FAQ, and footer sections
+- Mouse-following visual effects with Framer Motion
+- Firebase Analytics setup
+- Meta Pixel and Conversions API event wiring
+
+## Tech stack
+
+- Next.js 14
+- React 18
+- Tailwind CSS
+- Framer Motion
+- Firebase Analytics
+- Swiper
+- React Icons
+- React Hot Toast
+
+## Project structure
+
+```text
+src/
+  app/
+    components/     # Landing page UI sections
+    page.js         # Main landing page composition and tracking hooks
+  utils/
+    config.js       # Download URLs for Mac and Windows builds
+```
+
+## Getting started
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the local site at:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Available scripts
 
-## Learn More
+```bash
+npm run dev      # Start the local development server
+npm run build    # Create a production build
+npm run start    # Run the production build
+npm run lint     # Run Next.js linting
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Configuration notes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Download links are managed in:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```text
+src/utils/config.js
+```
 
-## Deploy on Vercel
+Meta tracking expects this environment variable when download/page-view events are enabled:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+NEXT_PUBLIC_FACEBOOK_TOKEN=your_token_here
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Before deploying, verify that analytics IDs, tracking tokens, Firebase config, and download URLs are correct for the target environment.
+
+## Status
+
+This repository is focused on the public landing page and download experience for HourBlock. The actual desktop app builds are linked from the release URLs in the site configuration.
